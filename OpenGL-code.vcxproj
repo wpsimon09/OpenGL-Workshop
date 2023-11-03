@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{bfde32b0-ca5b-4784-b5c5-ddd9f0884311}</ProjectGuid>
+    <RootNamespace>OpenGLcode</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\simon\OneDrive\Počítač\OpenGL\3rdPartyLibraries\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\simon\OneDrive\Počítač\OpenGL\3rdPartyLibraries\Includes;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\simon\OneDrive\Počítač\OpenGL\3rdPartyLibraries\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\simon\OneDrive\Počítač\OpenGL\3rdPartyLibraries\Includes;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)\3rdPartyLibraries\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\3rdPartyLibraries\Libraries;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Users\simon\OneDrive\Počítač\OpenGL\3rdPartyLibraries\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\simon\OneDrive\Počítač\OpenGL\3rdPartyLibraries\Includes;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>Includes</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="3rdPartyLibraries\Includes\glad\glad.h" />
+    <ClInclude Include="Includes\camera.h" />
+    <ClInclude Include="Includes\config.h" />
+    <ClInclude Include="Includes\DrawingFunctions.h" />
+    <ClInclude Include="Includes\HelperFunctions.h" />
+    <ClInclude Include="Includes\Mesh.h" />
+    <ClInclude Include="Includes\Model.h" />
+    <ClInclude Include="Includes\Shader.h" />
+    <ClInclude Include="Includes\stb_image.h" />
+    <ClInclude Include="Includes\VaoCreation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3rdPartyLibraries\Includes\glad\glad.c" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\stb_image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Model\backpack\backpack.mtl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="Assets\Model\cyborg\cyborg.blend" />
+    <None Include="Assets\Model\cyborg\cyborg.blend1" />
+    <None Include="Assets\Model\cyborg\cyborg.mtl" />
+    <None Include="Assets\Model\fluttershy\fg_funkoFluttershy.mtl" />
+    <None Include="Assets\Model\horse\Scaniverse.mtl" />
+    <None Include="Assets\Model\spaceship\model\texture\spaceShip.fbx" />
+    <None Include="Assets\Model\stormtrooper\stormtrooper.mtl" />
+    <None Include="FragmentShader\AdvancedLightning\AdvancedLightningFragmnet.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\FinalFragment.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\gBufferFragment.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\LightSourceFragment.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\ShadowMapFragement.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\WoodenCubeFragment.glsl" />
+    <None Include="FragmentShader\DepthTestingFragment.glsl" />
+    <None Include="FragmentShader\FloorFragment.glsl" />
+    <None Include="FragmentShader\FragmentShader.glsl" />
+    <None Include="FragmentShader\LightFragmentShader.glsl" />
+    <None Include="FragmentShader\PBR\PBRFragment.glsl" />
+    <None Include="VertexShader\AdvancedLightning\AdvancedLightningVertex.glsl" />
+    <None Include="VertexShader\AdvancedLightning\FinalVertex.glsl" />
+    <None Include="VertexShader\AdvancedLightning\gBufferVertex.glsl" />
+    <None Include="VertexShader\AdvancedLightning\LightSourceVertex.glsl" />
+    <None Include="VertexShader\AdvancedLightning\ShadowMapVertex.glsl" />
+    <None Include="VertexShader\AdvancedLightning\WoodenCubeVertex.glsl" />
+    <None Include="VertexShader\DepthTestingVertex.glsl" />
+    <None Include="VertexShader\FloorVertex.glsl" />
+    <None Include="VertexShader\LightVertexShader.glsl" />
+    <None Include="VertexShader\PBR\PBRVertex.glsl" />
+    <None Include="VertexShader\PBR\PBRVertexInstanced.glsl" />
+    <None Include="VertexShader\VertexShader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Model\backpack\ao.jpg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="Assets\Model\backpack\diffuse.jpg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="Assets\Model\backpack\normal.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="Assets\Model\backpack\roughness.jpg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="Assets\Model\backpack\specular.jpg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="Assets\Model\cyborg\cyborg_diffuse.png" />
+    <Image Include="Assets\Model\cyborg\cyborg_normal.png" />
+    <Image Include="Assets\Model\cyborg\cyborg_specular.png" />
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_albedo.jpg" />
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_ao.jpg" />
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_metal.jpg" />
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_nrm.jpg" />
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_scattering.jpg" />
+    <Image Include="Assets\Model\horse\Scaniverse.jpg" />
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_alpha.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_diffuse.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_metal.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_nrm.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_rough.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_diffuse.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_metal.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_nrm.png" />
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_rough.png" />
+    <Image Include="Assets\Model\stormtrooper\backbebap.png" />
+    <Image Include="Assets\Model\stormtrooper\Stormtrooper_D.tga" />
+    <Image Include="Assets\Model\stormtrooper\Stormtrooper_N.tga" />
+    <Image Include="Assets\Model\stormtrooper\Stormtrooper_S.tga" />
+    <Image Include="Assets\Textures\AdvancedLightning\brickwall.jpg" />
+    <Image Include="Assets\Textures\AdvancedLightning\brickwall_normal.jpg" />
+    <Image Include="Assets\Textures\AdvancedLightning\cube-wood.jpg" />
+    <Image Include="Assets\Textures\AdvancedLightning\floor_normal.jpg" />
+    <Image Include="Assets\Textures\AdvancedLightning\grid.jpg" />
+    <Image Include="Assets\Textures\AdvancedLightning\grid_ch.png" />
+    <Image Include="Assets\Textures\AdvancedLightning\grid_w.jpg" />
+    <Image Include="Assets\Textures\AdvancedLightning\light.png" />
+    <Image Include="Assets\Textures\AdvancedLightning\sun.png" />
+    <Image Include="Assets\Textures\AdvancedLightning\wood.png" />
+    <Image Include="Assets\Textures\container.jpg" />
+    <Image Include="Assets\Textures\container2.png" />
+    <Image Include="Assets\Textures\container2_specular.png" />
+    <Image Include="Assets\Textures\container2_specular_colored.png" />
+    <Image Include="Assets\Textures\DepthTesting\marble.jpg" />
+    <Image Include="Assets\Textures\DepthTesting\metal.png" />
+    <Image Include="Assets\Textures\matrix.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Model\backpack\backpack.obj">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\Model\backpack\source_attribution.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy.obj">
+      <FileType>Document</FileType>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Model\horse\Scaniverse.obj">
+      <FileType>Document</FileType>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Model\cyborg\cyborg.obj">
+      <FileType>Document</FileType>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Model\stormtrooper\stormtrooper.obj">
+      <FileType>Document</FileType>
+    </Image>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

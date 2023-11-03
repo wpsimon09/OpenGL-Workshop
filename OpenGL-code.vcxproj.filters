@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Fragment">
+      <UniqueIdentifier>{0b8541d2-bfcb-466e-9c40-9805bfa6a455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vertex">
+      <UniqueIdentifier>{046be1d7-5985-41e1-85cf-fb4899b7356d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Libraries">
+      <UniqueIdentifier>{9486bef3-7dc4-49ef-8240-10f260c41a6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Includes\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\HelperFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdPartyLibraries\Includes\glad\glad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\DrawingFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\VaoCreation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stb_image.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdPartyLibraries\Includes\glad\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FragmentShader\FragmentShader.glsl">
+      <Filter>Source Files\Fragment</Filter>
+    </None>
+    <None Include="VertexShader\VertexShader.glsl">
+      <Filter>Source Files\Vertex</Filter>
+    </None>
+    <None Include="VertexShader\LightVertexShader.glsl" />
+    <None Include="FragmentShader\LightFragmentShader.glsl" />
+    <None Include="Assets\Model\backpack\backpack.mtl" />
+    <None Include="Assets\Model\spaceship\model\texture\spaceShip.fbx" />
+    <None Include="FragmentShader\DepthTestingFragment.glsl" />
+    <None Include="VertexShader\DepthTestingVertex.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\AdvancedLightningFragmnet.glsl" />
+    <None Include="VertexShader\AdvancedLightning\AdvancedLightningVertex.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\LightSourceFragment.glsl" />
+    <None Include="VertexShader\AdvancedLightning\LightSourceVertex.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\WoodenCubeFragment.glsl" />
+    <None Include="VertexShader\AdvancedLightning\WoodenCubeVertex.glsl" />
+    <None Include="VertexShader\AdvancedLightning\ShadowMapVertex.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\ShadowMapFragement.glsl" />
+    <None Include="Assets\Model\fluttershy\fg_funkoFluttershy.mtl" />
+    <None Include="Assets\Model\horse\Scaniverse.mtl" />
+    <None Include="Assets\Model\cyborg\cyborg.mtl" />
+    <None Include="Assets\Model\cyborg\cyborg.blend1" />
+    <None Include="Assets\Model\cyborg\cyborg.blend" />
+    <None Include="Assets\Model\stormtrooper\stormtrooper.mtl" />
+    <None Include="VertexShader\FloorVertex.glsl" />
+    <None Include="FragmentShader\FloorFragment.glsl" />
+    <None Include="VertexShader\AdvancedLightning\FinalVertex.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\FinalFragment.glsl" />
+    <None Include="VertexShader\AdvancedLightning\gBufferVertex.glsl" />
+    <None Include="FragmentShader\AdvancedLightning\gBufferFragment.glsl" />
+    <None Include="FragmentShader\PBR\PBRFragment.glsl" />
+    <None Include="VertexShader\PBR\PBRVertexInstanced.glsl" />
+    <None Include="VertexShader\PBR\PBRVertex.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\container.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\container2_specular.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\container2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\container2_specular_colored.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\matrix.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\backpack\ao.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\backpack\diffuse.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\backpack\normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\backpack\roughness.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\backpack\specular.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\backpack\backpack.obj" />
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_alpha.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_diffuse.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_metal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_nrm.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_diffuse.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\auxielieryMat_rough.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_metal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_nrm.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\spaceship\model\texture\mainMat_rough.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\DepthTesting\marble.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\DepthTesting\metal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\wood.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\light.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\cube-wood.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_albedo.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_ao.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_metal.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_nrm.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy_scattering.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\horse\Scaniverse.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\fluttershy\fg_funkoFluttershy.obj" />
+    <Image Include="Assets\Model\horse\Scaniverse.obj" />
+    <Image Include="Assets\Textures\AdvancedLightning\grid.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\brickwall.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\brickwall_normal.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\floor_normal.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\grid_w.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\cyborg\cyborg_diffuse.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\cyborg\cyborg_normal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\cyborg\cyborg_specular.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\cyborg\cyborg.obj" />
+    <Image Include="Assets\Model\stormtrooper\backbebap.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Model\stormtrooper\Stormtrooper_D.tga" />
+    <Image Include="Assets\Model\stormtrooper\Stormtrooper_N.tga" />
+    <Image Include="Assets\Model\stormtrooper\Stormtrooper_S.tga" />
+    <Image Include="Assets\Model\stormtrooper\stormtrooper.obj" />
+    <Image Include="Assets\Textures\AdvancedLightning\sun.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\AdvancedLightning\grid_ch.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\Model\backpack\source_attribution.txt" />
+  </ItemGroup>
+</Project>
