@@ -48,9 +48,6 @@
     <ClInclude Include="3rdPartyLibraries\Includes\glad\glad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\DrawingFunctions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Includes\VaoCreation.h">
       <Filter>Header Files</Filter>
     </ClInclude>

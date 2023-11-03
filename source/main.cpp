@@ -9,7 +9,6 @@
 #include "camera.h"
 #include "Model.h"
 #include "HelperFunctions.h";
-#include "DrawingFunctions.h"
 #include "VaoCreation.h"
 #include "Model.h"
 

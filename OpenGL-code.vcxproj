@@ -151,7 +151,6 @@
     <ClInclude Include="3rdPartyLibraries\Includes\glad\glad.h" />
     <ClInclude Include="Includes\camera.h" />
     <ClInclude Include="Includes\config.h" />
-    <ClInclude Include="Includes\DrawingFunctions.h" />
     <ClInclude Include="Includes\HelperFunctions.h" />
     <ClInclude Include="Includes\Mesh.h" />
     <ClInclude Include="Includes\Model.h" />
