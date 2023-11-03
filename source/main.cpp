@@ -29,11 +29,12 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 int SCR_WIDTH = 1800;
 int SCR_HEIGHT = 1600;
 
-// camera
+/*
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = SCR_HEIGHT / 2.0f;
 float lastY = SCR_WIDTH / 2.0f;
 bool firstMouse = true;
+*/
 
 // timing
 float deltaTime = 0.0f;	// time between current frame and last frame
@@ -41,6 +42,11 @@ float lastFrame = 0.0f;
 
 
 int main() {
+
+	//---------------------------
+	// OPENGL AND WINDOW SETTINGS
+	//---------------------------
+
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -71,12 +77,6 @@ int main() {
 		return -1;
 	}
 
-
-	//Shader mainShader("VertexShader/AdvancedLightning/AdvancedLightningVertex.glsl", "FragmentShader/AdvancedLightning/AdvancedLightningFragmnet.glsl", "main");
-
-	stbi_set_flip_vertically_on_load(true);
-
-
 	//===================================== RENDER LOOP ================================================//
 
 	while (!glfwWindowShouldClose(window))
@@ -94,6 +94,7 @@ int main() {
 		//----------
 		// MAIN CODE
 		//----------
+
 
 		// swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------
@@ -117,17 +118,18 @@ void processInput(GLFWwindow *window)
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
 
-
-	//const float lightSpeed = 2.5f * deltaTime; // adjust accordingly
-	//if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-	//	camera.ProcessKeyboard(FORWARD, deltaTime);
-	//if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-	//	camera.ProcessKeyboard(BACKWARD, deltaTime);
-	//if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-	//	camera.ProcessKeyboard(LEFT, deltaTime);
-	//if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-	//	camera.ProcessKeyboard(RIGHT, deltaTime);
-	/*if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+	/*
+	
+	const float lightSpeed = 2.5f * deltaTime; // adjust accordingly
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+		camera.ProcessKeyboard(FORWARD, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+		camera.ProcessKeyboard(BACKWARD, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		camera.ProcessKeyboard(LEFT, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+		camera.ProcessKeyboard(RIGHT, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 		lightPosition.z += lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 		lightPosition.z -= lightSpeed;
@@ -138,30 +140,34 @@ void processInput(GLFWwindow *window)
 	if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
 		lightPosition.y -= lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-		lightPosition.y += lightSpeed;*/
+		lightPosition.y += lightSpeed;
+	*/
 
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 	
-	//if (firstMouse) // initially set to true
-	//{
-	//	lastX = xpos;
-	//	lastY = ypos;
-	//	firstMouse = false;
-	//}
+	/*
+	
+	if (firstMouse) // initially set to true
+	{
+		lastX = xpos;
+		lastY = ypos;
+		firstMouse = false;
+	}
 
-	//float xOffset = xpos - lastX;
-	//float yOffset = ypos - lastY; //calculate how much does mouse move 
+	float xOffset = xpos - lastX;
+	float yOffset = ypos - lastY; //calculate how much does mouse move 
 
-	//lastX = xpos;
-	//lastY = ypos; //update last mouse position 
+	lastX = xpos;
+	lastY = ypos; //update last mouse position 
 
-	//camera.ProcessMouseMovement(xOffset, yOffset);
+	camera.ProcessMouseMovement(xOffset, yOffset);
 
+	*/
 }
 
 void scroll_callback(GLFWwindow * window, double xoffset, double yoffset)
 {
-	/*camera.ProcessMouseScroll(static_cast<float>(yoffset));*/
+	//camera.ProcessMouseScroll(static_cast<float>(yoffset));
 }
