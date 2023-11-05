@@ -62,13 +62,10 @@ int main() {
 	//this code is to make context on the window current and to initialize glad
 	glfwMakeContextCurrent(window);
 	gladLoadGL();
-	glEnable(GL_DEPTH_TEST);
-
-	//enables gama correction that is build in opengl
-	glEnable(GL_FRAMEBUFFER_SRGB);
 	glfwSetCursorPosCallback(window, mouse_callback);
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetScrollCallback(window, scroll_callback);
+	glEnable(GL_DEPTH_TEST); 
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
