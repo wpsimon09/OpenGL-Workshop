@@ -194,6 +194,7 @@
     <None Include="VertexShader\DepthTestingVertex.glsl" />
     <None Include="VertexShader\FloorVertex.glsl" />
     <None Include="VertexShader\LightVertexShader.glsl" />
+    <None Include="VertexShader\MainVertexShader.glsl" />
     <None Include="VertexShader\PBR\PBRVertex.glsl" />
     <None Include="VertexShader\PBR\PBRVertexInstanced.glsl" />
     <None Include="VertexShader\VertexShader.glsl" />
