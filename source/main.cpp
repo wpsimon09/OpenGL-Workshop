@@ -95,11 +95,20 @@ int main() {
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3*sizeof(float)));
 
+	//uv coordinates
+	glEnableVertexAttribArray(2);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glBindVertexArray(0);
 
+	unsigned int cubeTexture = loadTexture("Assets/Textures/container.png");
+	unsigned int cubeTexture_specular = loadTexture("Assets/Textures/container_specular.png");
 
+	mainShader.use();
+	mainShader.setInt("texture_diffuse0", 0);
+	mainShader.setInt("texture_specular0", 1);
 
 	//===================================== RENDER LOOP ================================================//
 
@@ -136,6 +145,12 @@ int main() {
 		mainShader.setVec3("lightPos", lightPos);
 
 		mainShader.setVec3("viewPos", camera.Position);
+
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, cubeTexture);
+		
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, cubeTexture_specular);
 
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
