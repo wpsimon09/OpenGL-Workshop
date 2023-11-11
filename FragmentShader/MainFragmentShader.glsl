@@ -28,8 +28,8 @@ void main()
 	//specular
 	vec3 viewDir = normalize(viewPos - FragPos);
 	vec3 reflectDir = reflect(-lightDirection, N);
-	float specularStrenght = pow(max(dot(viewDir, reflectDir), 0.0),16);
-	vec3 specular =0.5 * specularStrenght * lightColor;
+	float specularStrenght = pow(max(dot(viewDir, reflectDir), 0.0),16)*0.5;
+	vec3 specular =specularStrenght * lightColor;
 
 	//result
 	vec3 finalColor = (ambient + diffuse + specular) * cubeColor;

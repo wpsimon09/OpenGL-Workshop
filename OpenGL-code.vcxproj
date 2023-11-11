@@ -249,9 +249,11 @@
     <Image Include="Assets\Textures\AdvancedLightning\sun.png" />
     <Image Include="Assets\Textures\AdvancedLightning\wood.png" />
     <Image Include="Assets\Textures\container.jpg" />
+    <Image Include="Assets\Textures\container.png" />
     <Image Include="Assets\Textures\container2.png" />
     <Image Include="Assets\Textures\container2_specular.png" />
     <Image Include="Assets\Textures\container2_specular_colored.png" />
+    <Image Include="Assets\Textures\container_specular.png" />
     <Image Include="Assets\Textures\DepthTesting\marble.jpg" />
     <Image Include="Assets\Textures\DepthTesting\metal.png" />
     <Image Include="Assets\Textures\matrix.jpg" />
