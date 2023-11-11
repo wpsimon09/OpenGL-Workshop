@@ -23,21 +23,22 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 //-------------------
 //APPLICATION OPTIONS
 //-------------------
-
 //screen coordinates
-int SCR_WIDTH = 1800;
-int SCR_HEIGHT = 1600;
+int SCR_WIDTH = 800;
+int SCR_HEIGHT = 600;
 
-/*
+
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = SCR_HEIGHT / 2.0f;
 float lastY = SCR_WIDTH / 2.0f;
 bool firstMouse = true;
-*/
 
 // timing
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
+
+//light position
+glm::vec3 lightPos(3.2f, 3.1f, 4.8f);
 
 
 int main() {
@@ -51,7 +52,7 @@ int main() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "OpenGL", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Window", NULL, NULL);
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
@@ -73,6 +74,8 @@ int main() {
 		return -1;
 	}
 
+	Shader mainShader("VertexShader/MainVertexShader.glsl", "FragmentShader/MainFragmentShader.glsl", "mainShader");
+
 	// VAO - vertex array object that can acces the input of the vertex shader
 	// VBO - vertex buffer object that holds the acctual data that will be passed to the vertex shader 
 	unsigned int VAO, VBO;
@@ -84,8 +87,13 @@ int main() {
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
 
+	//position
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+
+	//normals
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3*sizeof(float)));
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -97,6 +105,8 @@ int main() {
 
 	while (!glfwWindowShouldClose(window))
 	{
+		glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		// per-frame time logic
 		// --------------------
 		float currentFrame = static_cast<float>(glfwGetTime());
@@ -106,11 +116,38 @@ int main() {
 		// input
 		// -----
 		processInput(window);
-	
+
 		//----------
 		// MAIN CODE
 		//----------
+		mainShader.use();
+		mainShader.setVec3("cubeColor", glm::vec3(0.0, 1.0, 1.0));
+	
+		glm::mat4 model = glm::mat4(1.0f);
 
+		mainShader.setMat4("model", model);
+		
+		glm::mat4 view = camera.GetViewMatrix();
+		mainShader.setMat4("view", view);
+
+		glm::mat4 projection = glm::perspective(glm::radians(75.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 50.0f);
+		mainShader.setMat4("projection", projection);
+
+		mainShader.setVec3("lightPos", lightPos);
+
+		mainShader.setVec3("viewPos", camera.Position);
+
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, lightPos);
+		mainShader.setMat4("model", model);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
+		glBindVertexArray(0);
 
 		// swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------
@@ -119,6 +156,9 @@ int main() {
 	}
 
 	glfwTerminate();
+	std::cout << lightPos.x << std::endl;
+	std::cout<< lightPos.y <<std::endl;
+	std::cout << lightPos.z << std::endl;
 
 	return 0;
 }
@@ -133,8 +173,7 @@ void processInput(GLFWwindow *window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
-
-	/*
+	
 	
 	const float lightSpeed = 2.5f * deltaTime; // adjust accordingly
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
@@ -146,24 +185,23 @@ void processInput(GLFWwindow *window)
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		camera.ProcessKeyboard(RIGHT, deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
-		lightPosition.z += lightSpeed;
+		lightPos.z += lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
-		lightPosition.z -= lightSpeed;
+		lightPos.z -= lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
-		lightPosition.x += lightSpeed;
+		lightPos.x += lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
-		lightPosition.x -= lightSpeed;
+		lightPos.x -= lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
-		lightPosition.y -= lightSpeed;
+		lightPos.y -= lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-		lightPosition.y += lightSpeed;
-	*/
+		lightPos.y += lightSpeed;
 
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 	
-	/*
+	
 	
 	if (firstMouse) // initially set to true
 	{
@@ -180,7 +218,7 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 
 	camera.ProcessMouseMovement(xOffset, yOffset);
 
-	*/
+	
 }
 
 void scroll_callback(GLFWwindow * window, double xoffset, double yoffset)

@@ -1,4 +1,4 @@
-#ifndef SHADER_H
+﻿#ifndef SHADER_H
 #define SHADER_H
 
 #include <glad/glad.h>
@@ -160,7 +160,7 @@ private:
                 std::cout << "ERROR::PROGRAM_LINKING_ERROR at shader" << this->ID << " of type : " << type << "\n" << infoLog << "\n-- -------------------------------------------------- - -- " << std::endl;
             }
             else
-                std::cout << "Shaders linked successfull \n SHADER NAME: " << this->name << " \xE2\x9C\x93 " << std::endl;
+                std::cout << "Shaders linked successfull \n SHADER NAME: " << this->name << "✅" << std::endl;
         }
     }
 };

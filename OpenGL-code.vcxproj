@@ -184,6 +184,7 @@
     <None Include="FragmentShader\FloorFragment.glsl" />
     <None Include="FragmentShader\FragmentShader.glsl" />
     <None Include="FragmentShader\LightFragmentShader.glsl" />
+    <None Include="FragmentShader\MainFragmentShader.glsl" />
     <None Include="FragmentShader\PBR\PBRFragment.glsl" />
     <None Include="VertexShader\AdvancedLightning\AdvancedLightningVertex.glsl" />
     <None Include="VertexShader\AdvancedLightning\FinalVertex.glsl" />
