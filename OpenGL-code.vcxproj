@@ -164,6 +164,7 @@
     <ClCompile Include="source\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Models\Stormtrooper\stormtrooper.mtl" />
     <None Include="Assets\Model\backpack\backpack.mtl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </None>
@@ -201,6 +202,10 @@
     <None Include="VertexShader\VertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Assets\Models\Stormtrooper\backbebap.png" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_D.tga" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_N.tga" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_S.tga" />
     <Image Include="Assets\Model\backpack\ao.jpg">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Image>
@@ -288,6 +293,11 @@
     <Image Include="Assets\Model\stormtrooper\stormtrooper.obj">
       <FileType>Document</FileType>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\Models\Stormtrooper\stormtrooper.obj">
+      <FileType>Document</FileType>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

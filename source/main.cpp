@@ -76,6 +76,8 @@ int main() {
 
 	Shader mainShader("VertexShader/MainVertexShader.glsl", "FragmentShader/MainFragmentShader.glsl", "mainShader");
 
+
+	Model stormtrooper("Assets/Models/Stormtrooper/stormtrooper.obj");
 	// VAO - vertex array object that can acces the input of the vertex shader
 	// VBO - vertex buffer object that holds the acctual data that will be passed to the vertex shader 
 	unsigned int VAO, VBO;
@@ -155,11 +157,14 @@ int main() {
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
+		stormtrooper.Draw(mainShader);
+		
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, lightPos);
 		mainShader.setMat4("model", model);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
+
 
 
 		glBindVertexArray(0);
