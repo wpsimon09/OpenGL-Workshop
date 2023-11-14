@@ -100,6 +100,8 @@
     <None Include="VertexShader\PBR\PBRVertexInstanced.glsl" />
     <None Include="VertexShader\PBR\PBRVertex.glsl" />
     <None Include="VertexShader\MainVertexShader.glsl" />
+    <None Include="FragmentShader\MainFragmentShader.glsl" />
+    <None Include="Assets\Models\Stormtrooper\stormtrooper.mtl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Textures\container.jpg">
@@ -233,8 +235,21 @@
     <Image Include="Assets\Textures\AdvancedLightning\grid_ch.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Assets\Textures\container.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Textures\container_specular.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Models\Stormtrooper\backbebap.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_D.tga" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_N.tga" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_S.tga" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Assets\Model\backpack\source_attribution.txt" />
+    <Text Include="Assets\Models\Stormtrooper\stormtrooper.obj" />
   </ItemGroup>
 </Project>

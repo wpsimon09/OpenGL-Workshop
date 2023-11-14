@@ -23,21 +23,21 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 //-------------------
 //APPLICATION OPTIONS
 //-------------------
-
 //screen coordinates
-int SCR_WIDTH = 1800;
-int SCR_HEIGHT = 1600;
+int SCR_WIDTH = 800;
+int SCR_HEIGHT = 600;
 
-/*
+
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = SCR_HEIGHT / 2.0f;
 float lastY = SCR_WIDTH / 2.0f;
 bool firstMouse = true;
-*/
 
 // timing
 float deltaTime = 0.0f;	// time between current frame and last frame
 float lastFrame = 0.0f;
+
+//light position
 
 
 int main() {
@@ -51,7 +51,7 @@ int main() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "OpenGL", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Window", NULL, NULL);
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
@@ -73,30 +73,12 @@ int main() {
 		return -1;
 	}
 
-	// VAO - vertex array object that can acces the input of the vertex shader
-	// VBO - vertex buffer object that holds the acctual data that will be passed to the vertex shader 
-	unsigned int VAO, VBO;
-	glGenBuffers(1, &VBO);
-	glGenVertexArrays(1, &VAO);
-
-	glBindVertexArray(VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-	glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
-
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-	glBindVertexArray(0);
-
-
 
 	//===================================== RENDER LOOP ================================================//
-
 	while (!glfwWindowShouldClose(window))
 	{
+		glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		// per-frame time logic
 		// --------------------
 		float currentFrame = static_cast<float>(glfwGetTime());
@@ -106,10 +88,11 @@ int main() {
 		// input
 		// -----
 		processInput(window);
-	
+
 		//----------
 		// MAIN CODE
 		//----------
+		
 
 
 		// swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -133,8 +116,7 @@ void processInput(GLFWwindow *window)
 {
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
-
-	/*
+	
 	
 	const float lightSpeed = 2.5f * deltaTime; // adjust accordingly
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
@@ -145,25 +127,24 @@ void processInput(GLFWwindow *window)
 		camera.ProcessKeyboard(LEFT, deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		camera.ProcessKeyboard(RIGHT, deltaTime);
-	if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
-		lightPosition.z += lightSpeed;
+	/*if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
+		lightPos.z += lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
-		lightPosition.z -= lightSpeed;
+		lightPos.z -= lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
-		lightPosition.x += lightSpeed;
+		lightPos.x += lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
-		lightPosition.x -= lightSpeed;
+		lightPos.x -= lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
-		lightPosition.y -= lightSpeed;
+		lightPos.y -= lightSpeed;
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-		lightPosition.y += lightSpeed;
-	*/
+		lightPos.y += lightSpeed;*/
 
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 	
-	/*
+	
 	
 	if (firstMouse) // initially set to true
 	{
@@ -180,10 +161,10 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
 
 	camera.ProcessMouseMovement(xOffset, yOffset);
 
-	*/
+	
 }
 
 void scroll_callback(GLFWwindow * window, double xoffset, double yoffset)
 {
-	//camera.ProcessMouseScroll(static_cast<float>(yoffset));
+	camera.ProcessMouseScroll(static_cast<float>(yoffset));
 }

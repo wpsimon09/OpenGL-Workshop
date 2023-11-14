@@ -164,6 +164,7 @@
     <ClCompile Include="source\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Models\Stormtrooper\stormtrooper.mtl" />
     <None Include="Assets\Model\backpack\backpack.mtl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </None>
@@ -184,6 +185,7 @@
     <None Include="FragmentShader\FloorFragment.glsl" />
     <None Include="FragmentShader\FragmentShader.glsl" />
     <None Include="FragmentShader\LightFragmentShader.glsl" />
+    <None Include="FragmentShader\MainFragmentShader.glsl" />
     <None Include="FragmentShader\PBR\PBRFragment.glsl" />
     <None Include="VertexShader\AdvancedLightning\AdvancedLightningVertex.glsl" />
     <None Include="VertexShader\AdvancedLightning\FinalVertex.glsl" />
@@ -200,6 +202,10 @@
     <None Include="VertexShader\VertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Assets\Models\Stormtrooper\backbebap.png" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_D.tga" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_N.tga" />
+    <Image Include="Assets\Models\Stormtrooper\Stormtrooper_S.tga" />
     <Image Include="Assets\Model\backpack\ao.jpg">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Image>
@@ -248,9 +254,11 @@
     <Image Include="Assets\Textures\AdvancedLightning\sun.png" />
     <Image Include="Assets\Textures\AdvancedLightning\wood.png" />
     <Image Include="Assets\Textures\container.jpg" />
+    <Image Include="Assets\Textures\container.png" />
     <Image Include="Assets\Textures\container2.png" />
     <Image Include="Assets\Textures\container2_specular.png" />
     <Image Include="Assets\Textures\container2_specular_colored.png" />
+    <Image Include="Assets\Textures\container_specular.png" />
     <Image Include="Assets\Textures\DepthTesting\marble.jpg" />
     <Image Include="Assets\Textures\DepthTesting\metal.png" />
     <Image Include="Assets\Textures\matrix.jpg" />
@@ -285,6 +293,11 @@
     <Image Include="Assets\Model\stormtrooper\stormtrooper.obj">
       <FileType>Document</FileType>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\Models\Stormtrooper\stormtrooper.obj">
+      <FileType>Document</FileType>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
