@@ -73,6 +73,23 @@ int main() {
 		return -1;
 	}
 
+	Shader mainShader("VertexShader/MainVertexShader.glsl", "FragmentShader/MainFragmentShader.glsl", "main object shader");
+
+	unsigned int VAO, VBO;
+	glGenBuffers(1, &VBO);
+	glGenVertexArrays(1, &VAO);
+
+	glBindVertexArray(VAO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
+
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+
+	glBindVertexArray(0);
+
+
 
 	//===================================== RENDER LOOP ================================================//
 	while (!glfwWindowShouldClose(window))
@@ -92,8 +109,9 @@ int main() {
 		//----------
 		// MAIN CODE
 		//----------
-		
-
+		mainShader.use();
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		// swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		// -------------------------------------------------------------------------------
